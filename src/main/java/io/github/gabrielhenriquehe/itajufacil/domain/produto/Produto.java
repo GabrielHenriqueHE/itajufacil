@@ -1,5 +1,6 @@
 package io.github.gabrielhenriquehe.itajufacil.domain.produto;
 
+import io.github.gabrielhenriquehe.itajufacil.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -33,16 +34,21 @@ public class Produto implements Serializable {
     private BigDecimal preco;
 
     @Column(nullable = false)
-    private ProdutoTipo tipo;
+    private ProdutoCategoria categoria;
 
     @Column(nullable = false)
     private ProdutoEspecificacao especificacao;
 
-    public Produto(String nome, String descricao, BigDecimal preco, ProdutoTipo tipo, ProdutoEspecificacao especificacao) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private Usuario usuario;
+
+    public Produto(String nome, String descricao, BigDecimal preco, ProdutoCategoria categoria, ProdutoEspecificacao especificacao, Usuario usuario) {
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
-        this.tipo = tipo;
+        this.categoria = categoria;
         this.especificacao = especificacao;
+        this.usuario = usuario;
     }
 }

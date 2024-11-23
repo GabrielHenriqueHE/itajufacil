@@ -1,19 +1,19 @@
 package io.github.gabrielhenriquehe.itajufacil.domain.produto;
 
-public enum ProdutoTipo {
+public enum ProdutoCategoria {
     SALGADOS("SALGADOS"),
     DOCES("DOCES"),
     HORTIFRUTTI("HORTIFRUTTI"),
     BEBIDAS("BEBIDAS"),
     ROUPAS("ROUPAS");
 
-    private String tipo;
+    private String categoria;
 
-    ProdutoTipo(String tipo) {
-        this.tipo = tipo;
+    ProdutoCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
-    public String getTipo() {
-        return this.tipo;
+    public String getCategoria() {
+        return this.categoria;
     }
 }

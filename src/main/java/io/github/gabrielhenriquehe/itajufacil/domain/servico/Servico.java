@@ -1,5 +1,6 @@
 package io.github.gabrielhenriquehe.itajufacil.domain.servico;
 
+import io.github.gabrielhenriquehe.itajufacil.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -38,11 +39,16 @@ public class Servico implements Serializable {
     @Column(nullable = false)
     private ServicoEspecificacao especificacao;
 
-    public Servico(String nome, String descricao, BigDecimal preco, ServicoCategoria categoria, ServicoEspecificacao especificacao) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private Usuario usuario;
+
+    public Servico(String nome, String descricao, BigDecimal preco, ServicoCategoria categoria, ServicoEspecificacao especificacao, Usuario usuario) {
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
         this.categoria = categoria;
         this.especificacao = especificacao;
+        this.usuario = usuario;
     }
 }
