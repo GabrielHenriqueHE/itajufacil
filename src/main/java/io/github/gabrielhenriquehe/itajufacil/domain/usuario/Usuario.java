@@ -1,4 +1,4 @@
-package io.github.gabrielhenriquehe.itajufacil.domain.produto;
+package io.github.gabrielhenriquehe.itajufacil.domain.usuario;
 
 import jakarta.persistence.*;
 import lombok.*;
