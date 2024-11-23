@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS servico (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(60) NOT NULL,
+    descricao VARCHAR(60) NOT NULL,
+    preco DECIMAL(6,2) NOT NULL,
+    categoria ENUM("JARDINAGEM", "MARCENARIA", "PINTURA"),
+    especificacao ENUM("DIAS", "HORAS", "MINUTOS", "M2", "SEMANAS")
+);
