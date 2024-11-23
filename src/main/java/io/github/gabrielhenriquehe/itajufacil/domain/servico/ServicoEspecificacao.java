@@ -2,7 +2,7 @@ package io.github.gabrielhenriquehe.itajufacil.domain.servico;
 
 public enum ServicoEspecificacao {
     DIAS("DIAS"),
-    HORA("HORAS"),
+    HORAS("HORAS"),
     MINUTOS("MINUTOS"),
     M2("M2"),
     SEMANAS("SEMANAS");
