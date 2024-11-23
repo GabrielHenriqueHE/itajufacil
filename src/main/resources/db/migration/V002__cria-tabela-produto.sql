@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS produto (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(60) NOT NULL,
+    descricao VARCHAR(60) NOT NULL,
+    preco DECIMAL(6,2) NOT NULL,
+    tipo ENUM("SALGADOS", "DOCES", "HORTIFRUTTI", "BEBIDAS", "ROUPAS") NOT NULL,
+    especificacao ENUM("G", "KG", "LT", "ML", "UN")
+);
